@@ -1,13 +1,22 @@
-#get user score as a float input. Could also be an int input as they should only be whole numbers
-score = float(input("Enter score: "))
-#Next few lines basically do the same thing, checking if the input is in a range then responds accordingly
+"""cp1404 Ashton Stewart
+Program to get a score from the user and categorize it along with a random score
+"""
+import random
 
-if score >= 0 and score < 50:
-    print("Bad")
-elif score >= 50 and score < 90:
-    print("Passable")
-elif score >= 90  and score <= 100:
-    print("Excellent")
+def main():
+    score_num = int(input("What is your score?"))
+    print(F"Your score of {score_num}" + " was " + score_categorizer(score_num))
+    random_score = random.randint(0, 100)
+    print(F"your random score of {random_score}" + " was " + score_categorizer(random_score))
 
-else:
-    print("invalid score")
+def score_categorizer(score):
+    if score > 100 or score < 0:
+        return "invalid"
+    elif score >= 90:
+        return "excellent"
+    elif score >= 50:
+        return "good"
+    else:
+        return "bad"
+
+main()
