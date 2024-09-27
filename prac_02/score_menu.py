@@ -13,7 +13,7 @@ def main():
     inp_score = None
     choice = input(">>> ").upper()
 
-    if choice == "P" or choice == "S" and inp_score is None:
+    while choice == "P" or choice == "S" and inp_score is None:
         print("You must give an H value first")
         print(MENU)
         choice = input(">>> ").upper()
@@ -22,12 +22,14 @@ def main():
         while choice != "Q":
             if choice == "H":
                 inp_score = int(input("What is your score? "))
+                while inp_score < 0 or inp_score > 100:
+                    inp_score = int(input("Your score must be between 0 and 100 "))
 
             elif choice == "P":
                 print("Your score is " + score_categorizer(inp_score))
 
             elif choice == "S":
-                starprint(inp_score)
+                print(starprint(inp_score))
 
             else:
                 print("Invalid selection")
@@ -37,7 +39,7 @@ def main():
     print("Process concluded")
 
 def starprint(length):
-    print("*" * length)
+    return"*" * length
 
 def score_categorizer(inp_score):
     if inp_score > 100 or inp_score < 0:
