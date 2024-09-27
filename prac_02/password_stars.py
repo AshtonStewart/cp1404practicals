@@ -1,11 +1,22 @@
+"""cp1404 Ashton Stewart
+Program to get a password from the user that generates a star per character
+"""
 
+def main():
+    min_pass_length = 6
+    password = get_password(min_pass_length)
 
-def passtostars(userpass):
-    min_pass_length = 3
-    #user_password = input("What is your password?")
+def get_password(min_pass_length):
+    userpass = input("What is your password? ")
     if len(userpass) < min_pass_length:
         print(f"Your password must be at least {min_pass_length} characters long.")
+        main()
     else:
-        print("*" * len(userpass))
+        starprinter(len(userpass))
 
-passtostars("0924h5g4")
+def starprinter(starlength):
+    print("*" * starlength)
+
+main()
+
+print("Process concluded")
