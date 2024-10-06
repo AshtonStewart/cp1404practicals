@@ -1,5 +1,5 @@
 """
-CP1404/CP5632 - Practical
+CP1404 - Practical 3
 Answer the following questions:
 1. When will a ValueError occur?
 2. When will a ZeroDivisionError occur?
@@ -17,8 +17,7 @@ try:
     print(fraction)
 except ValueError:
     print("Numerator and denominator must be valid numbers!")
-#except ZeroDivisionError:
-    #print("Cannot divide by zero!")
+
 print("Finished.")
 
 #Q: When will a ValueError occur?

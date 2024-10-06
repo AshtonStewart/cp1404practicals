@@ -1,5 +1,5 @@
 """
-CP1404/CP5632 - Practical
+CP1404 - Practical 3
 Ashton Jack Stewart
 Capitalist Conrad wants a stock price simulator for a volatile stock.
 The price starts off at $10.00, and, at the end of every day there is
@@ -17,15 +17,13 @@ MAX_DECREASE = 0.05  # 5%
 MIN_PRICE = 1
 MAX_PRICE = 100.0
 INITIAL_PRICE = 10.0
-number_of_days = 0
-price = INITIAL_PRICE
-
-print(f"${price:,.2f}")
-out_file = open(FILE_NAME, 'w')
+number_of_days = 0 #gives the initial amount of days
+price = INITIAL_PRICE #sets the price to be the intial price
+out_file = open(FILE_NAME, 'w') #opens the file for writing
 
 while MIN_PRICE <= price <= MAX_PRICE:
 
-        daily_output = f"On day {number_of_days} the price is ${price:,.2f}"
+        daily_output = f"On day {number_of_days} the price is ${price:,.2f}" #states what the day and price is
         price_change = 0
         # generate a random integer of 1 or 2
         # if it's 1, the price increases, otherwise it decreases
@@ -38,9 +36,9 @@ while MIN_PRICE <= price <= MAX_PRICE:
             # between negative MAX_DECREASE and 0
             price_change = random.uniform(-MAX_DECREASE, 0)
 
-        price *= (1 + price_change)
-        print(daily_output)
-        number_of_days += 1
+        price *= (1 + price_change) #increases the price
+        print(daily_output) #prints the previously determined daily output
+        number_of_days += 1 #increases the days by 1
         print(daily_output, file=out_file)  # write to file
 
-out_file.close()
+out_file.close() #closes the file

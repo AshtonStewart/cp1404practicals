@@ -1,9 +1,9 @@
 """
-CP1404 - practical 3
+CP1404 - Practical 3
 Ashton Jack Stewart
 Examples of using python string formatting in printing.
 """
-
+import math #imports math for later rounding
 name = "Gibson L-5 CES"
 year = 1922
 cost = 16035.9
@@ -30,25 +30,10 @@ numbers = [1, 19, 123, 456, -25]
 for i, number in enumerate(numbers, 1):
     print(f"Number {i} is {number:5}")
 
-# TODO: Use f-string formatting to produce the output:
-# 1922 Gibson L-5 CES for about $16,036!
 
-print(f"{year} {name} for about {cost}")
+cost = math.ceil(cost) #rounds up from 16035.90 to 16036
+print(f"{year} {name} for about ${cost}") #prints the rounded year, name, and rounded cost of guitar
 
-# TODO: Using a for loop with the range function and f-string formatting,
-# produce the following right-aligned output (DO NOT use a list):
-# 2 ^ 0 is    1
-# 2 ^ 1 is    2
-# 2 ^ 2 is    4
-# 2 ^ 3 is    8
-# 2 ^ 4 is   16
-# 2 ^ 5 is   32
-# 2 ^ 6 is   64
-# 2 ^ 7 is  128
-# 2 ^ 8 is  256
-# 2 ^ 9 is  512
-# 2 ^10 is 1024
-
-for current_power_value in range(0, 11, 1):
-    #print(power_value)
+for current_power_value in range(0, 11, 1): #creates a range / loop for 10 values.
+    #prints 2^x with 10 increasing x values. All of which are aligned in requested format
     print(f"2^{current_power_value:2} is {2 ** current_power_value:4}")
