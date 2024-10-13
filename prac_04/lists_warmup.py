@@ -36,6 +36,7 @@ numbers = [3, 1, 4, 1, 5, 9, 2]
 
 
 #Note: Numbers is redefined before every statement/ code to reset changes made in previous code.
+#Comment only refers to middle chunk of code, not resetting line or printing line
 #Change the first element of numbers to "ten"
 print(f"numbers before changes: {numbers}")
 numbers[0] = "ten" #Changes the first element of numbers to "ten"

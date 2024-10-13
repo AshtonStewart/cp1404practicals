@@ -1,7 +1,7 @@
 """
 CP1404 - Practical 4
 Ashton Jack Stewart
-
+total income report generator
 """
 
 def main():

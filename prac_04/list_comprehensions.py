@@ -1,6 +1,7 @@
 """
-CP1404/CP5632 Practical
-List comprehensions
+CP1404 - Practical 4
+Ashton Jack Stewart
+list comprehensions and ways to edit lists
 """
 
 names = ["Bob", "Angel", "Jimi", "Alan", "Ada"]
@@ -29,20 +30,37 @@ print(a_names)
 # 'Ada Alan Angel Bob Jimi'
 print(" ".join(sorted(names)))
 
-# TODO: list comprehension to create a list of all the full_names in lowercase format
-
+#Code 1: convert string of both capital and lowercase letters to only lowercase.
 lower_case_full_name = []
-for name in full_names:
-    lower_case_full_name.append(name.lower()) #for name in full_names]
-print(f"{lower_case_full_name}")
+for name in full_names: #loops through names
+    lower_case_full_name.append(name.lower()) #makes name lower case
+print(lower_case_full_name) #prints new list
 
+#Code 2: convert string of text to list of numbers
 almost_numbers = ['0', '10', '21', '3', '-7', '88', '9']
-# TODO: list comprehension to create a list of integers from the above list of strings
-# numbers =
+real_numbers = []
+for fake_number in almost_numbers: #loops through string
+    real_numbers.append(int(fake_number)) #adds the text as a number to the end of the list
+print(real_numbers)
 
-# TODO: list comprehension to create a list of only the numbers that are
-# greater than 9 from the numbers (not strings) you just created
+#Code 3: creates a list with only numbers greater than 9 in 'real_numbers' from Code 2
+greater_than_nine = []
+for number_to_check in real_numbers: #loops through numbers
+    if number_to_check > 9: #checks if number is greater than 9
+        greater_than_nine.append(number_to_check) #adds the number if it is
+print(greater_than_nine)
 
-# TODO: (more advanced) use a list comprehension and the join string method
-# to create a string (not list) of the last names for those full names longer than 11 characters
-# the result should be: 'Harlem, Hendrix, Lovelace'
+#Code 4: prints last names of full names with more than 11 characters
+longer_than_eleven = []
+pos = 0 #gets a position
+for name_to_check in full_names: #loops through all names
+
+    name_length = len(name_to_check) #gets the length of characters in the name
+    if name_length > 11: #checks if the name is longer than 11 characters
+
+        #takes valid last name and slices off first name
+        last_name_to_be_added = full_names[pos].split()[1]
+        #adds result from previous line to list
+        longer_than_eleven.append(last_name_to_be_added)
+    pos += 1 #increases position by 1
+print(longer_than_eleven)
