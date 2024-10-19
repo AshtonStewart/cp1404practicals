@@ -3,6 +3,7 @@ CP1404 - Ashton Stewart
 hex colours in a dictionary
 """
 
+#dictionary :O
 hex_colour_codes = {"absolutezero": "#0048ba",
                     "aqua": "#00ffff",
                     "babyblue": "#89cff0",
@@ -13,26 +14,29 @@ hex_colour_codes = {"absolutezero": "#0048ba",
                     "cinereous": "#98817b",
                     "cornflowerblue": "#6495ed"}
 
-#gets the colour from the user, then turns all letters to lower case then removes all spaces
-#this also means if the user inputs "  " it will end the loop
-chosen_colour = input("What colour code do you want? ").lower().replace(" ", "")
+#sets an initial value that starts the loop
+chosen_colour = "start_the_loop!"
 
-#keeps asking for inputs as long as the user does not enter ""
 while chosen_colour != "":
+    #gets the users input (the name of the colour)
+    print("('' to quit)")
+    chosen_colour = (input("What colours hex code do you want? "))
 
-    #if the person gives a valid name:
+    #gets that chosen colour, removes spaces and sets everything...
+    #...to be lower case so that any variation of a valid name is compatible.
+    dictionary_colour_searcher = chosen_colour.lower().replace(" ", "")
+
+    #Tries to see if the edited input works for the dictionary
     try:
-        output_code = hex_colour_codes[chosen_colour] #chooses hex colour associated with colour name
-        print(f"The code for {chosen_colour} is {output_code}") #prints all the info
+        #if it does:
 
-        #gets the new colour name from the user, then turns all letters to lower case then removes all spaces
-        chosen_colour = input("What colour code do you want? ").lower().replace(" ", "")
+        # chooses hex colour associated with colour name
+        output_code = hex_colour_codes[dictionary_colour_searcher]
+        # prints the input and associated hex code
+        print(f"The code for {chosen_colour} is {output_code}")
 
-    #error checks then continues the code
+    #if it doesn't
     except:
         print("Invalid name, please choose another")
-
-        #gets the colour from the user, then turns all letters to lower case then removes all spaces
-        chosen_colour = input("What colour code do you want? ").lower().replace(" ", "")
 
 print("Colour picking concluded")
