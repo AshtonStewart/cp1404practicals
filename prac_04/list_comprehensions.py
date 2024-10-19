@@ -52,6 +52,7 @@ print(greater_than_nine)
 
 #Code 4: prints last names of full names with more than 11 characters
 longer_than_eleven = []
+
 pos = 0 #gets a position
 for name_to_check in full_names: #loops through all names
 
