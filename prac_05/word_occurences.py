@@ -15,18 +15,18 @@ input_string = user_input.split()
 word_checker = [] #acts as a list of all unique words in the sentence
 word_counter = {} #empty dictionary
 
-for words in input_string: #loops through all words in the string
+for word in input_string: #loops through all words in the string
     word_recurrence = 0 #resets the count of that word
 
-    if words not in word_checker: #checks if the current word is in word_counter
+    if word not in word_checker: #checks if the current word is in word_counter
 
         for current_word in input_string: #loops through the list again to get how many times that word is seen
 
-            if current_word == words: #checks if the currently looked at word matches the other currently looked at word
+            if current_word == word: #checks if the currently looked at word matches the other currently looked at word
                 word_recurrence +=1 #increases the count if it matches
 
-        word_checker.append(words) #adds to the list of words that have been counted so they are not recounted
-        word_counter[words] = word_recurrence #adds to the dictionary
+        word_checker.append(word) #adds to the list of words that have been counted so they are not recounted
+        word_counter[word] = word_recurrence #adds to the dictionary
 
 #sets a new variable
 max_length = 0
