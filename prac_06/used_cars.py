@@ -17,7 +17,7 @@ def main():
     #makes limo stuff
     limo = Car(100)
     limo.add_fuel(20)
-    print(f"The limo has {limo.fuel} units of fuel")
+    print(f"Limo has fuel: {limo.fuel}")
     limo.drive(115)
 
     #testing if cars and their names can be made.
