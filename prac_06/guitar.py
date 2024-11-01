@@ -12,10 +12,10 @@ class Guitar:
         self.cost = cost
 
     def __str__(self):
-        return(f"{self.name} ({self.year}) : ${self.cost}")
+        return f"{self.name} ({self.year}) : ${self.cost}"
 
-    def __get_age__(self):
-        return(self.year)
-    def __is_vintage__(self):
-        #vintage = [guitar.name for guitar in guitars if (2024 - guitar.year) > 50]
-        print("temporary crash stopper")
+    def get_age(self):
+        return 2024 - self.year
+
+    def is_vintage(self):
+        return True if self.year > 50 else False
