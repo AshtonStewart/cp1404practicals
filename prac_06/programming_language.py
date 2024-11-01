@@ -15,8 +15,6 @@ class Programminglanguage:
         self.year = year
         print(self)
 
-
-
     def __str__(self):
         return (f"{self.name}, typing = {self.typed}, Reflection = {self.reflect}, First appeared = {self.year}")
 
