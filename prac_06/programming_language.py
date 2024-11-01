@@ -1,4 +1,9 @@
-"""2:46"""
+"""
+Ashton Jack Stewart
+Practical 06 - programming_languages
+started: 2:46pm
+Finished: 11:28am
+"""
 
 
 
@@ -11,8 +16,9 @@ class Programminglanguage:
         print(self)
 
 
-    def is_dynamic(self):
-        print(self)
 
     def __str__(self):
-        return (f"{self.name}, Dynamic typing = {self.typed}, Reflection = {self.reflect}, First appeared = {self.year}")
+        return (f"{self.name}, typing = {self.typed}, Reflection = {self.reflect}, First appeared = {self.year}")
+
+    def is_dynamic(self):
+        return self.typed.lower() == "dynamic"

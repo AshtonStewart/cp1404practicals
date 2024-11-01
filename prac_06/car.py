@@ -1,4 +1,7 @@
-"""CP1404/CP5632 Practical - Car class example."""
+"""
+Ashton Jack Stewart
+CP1404 Practical - Car class example.
+"""
 
 
 class Car:
