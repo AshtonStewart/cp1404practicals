@@ -1,8 +1,8 @@
 """
 Ashton Jack Stewart
-Practical 06 - programming_languages
-started: 2:46pm
-Finished: 11:28am
+Practical 06 - guitar
+started: 12am
+Finished: 1:30pm
 """
 
 class Guitar:

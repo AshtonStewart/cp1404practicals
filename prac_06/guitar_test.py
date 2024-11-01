@@ -1,5 +1,6 @@
 """
-started 11:28
+Ashton Jack Stewart
+Practical 06 - guitar test
 """
 
 
@@ -7,7 +8,7 @@ from guitar import Guitar
 def test_guitar():
 
     given_guitar = Guitar("Gibson L-5 CES", 1922, 16035.40)
-    made_up_guitar = Guitar("Ashton Bok", 2023, 99999999)
+    made_up_guitar = Guitar("Ashton Guitar", 2023, 99999999)
 
     #print(guitar_list[0].get_age())
 
