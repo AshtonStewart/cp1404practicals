@@ -7,6 +7,7 @@ Finished: 11:28am
 
 from programming_language import Programminglanguage
 def print_info():
+    """Code to demonstrate functionality of class in programming_language.py"""
     #gives variables and their values
     python = Programminglanguage("Python", "Dynamic", True, 1991)
     ruby = Programminglanguage("Ruby", "Dynamic", True, 1995)

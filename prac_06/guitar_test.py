@@ -5,7 +5,8 @@ Practical 06 - guitar test
 
 
 from guitar import Guitar
-def test_guitar():
+def main():
+    """Code to demonstrate functionality of class in guitar.py"""
 
     given_guitar = Guitar("Gibson L-5 CES", 1922, 16035.40)
     made_up_guitar = Guitar("Ashton Guitar", 2023, 99999999)
@@ -20,8 +21,4 @@ def test_guitar():
     print(f"Is {made_up_guitar.name} vintage?: {made_up_guitar.is_vintage()}")
     print(f"Expected False, got {made_up_guitar.is_vintage()}")
 
-
-        #age = get_age(Guitars[1])
-        #print(guitars)
-
-test_guitar()
+main()

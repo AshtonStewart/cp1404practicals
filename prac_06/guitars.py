@@ -1,12 +1,16 @@
 """
 Ashton Jack Stewart
 Practical 06 - guitars
+Guessed time: About an hour
+Actual time: About an hour
 """
 
 from guitar import Guitar
 
-def input_guitar_info():
-    guitar_nest = []
+def main():
+    """Code to further demonstrate functionality of class in guitar.py"""
+
+    all_guitars = []
     guitar_name = "Not nothing!"
 
 
@@ -37,20 +41,22 @@ def input_guitar_info():
             #adds the new guitar info to the nest
 
 
-            guitar_nest.append(Guitar(name, year, value))
+            all_guitars.append(Guitar(name, year, value))
         else:
             info_loop = False
 
-    #guitar_nest.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
-    #guitar_nest.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
+    #all_guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
+    #all_guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
 
     print("These are my guitars;")
     count = 0
-    for each_guitar in guitar_nest:
+    for each_guitar in all_guitars:
         count += 1
         if each_guitar.is_vintage() == True:
-            print(f"Guitar {count}: {each_guitar.name:>20} ({each_guitar.year}), worth ${each_guitar.cost:10,.2f} (Vintage)")
+            is_vintage = "(Vintage)"
         else:
-            print(f"Guitar {count}: {each_guitar.name:>20} ({each_guitar.year}), worth ${each_guitar.cost:10,.2f}")
+            is_vintage = ""
+        print(f"Guitar {count}: {each_guitar.name:>20} ({each_guitar.year}), worth ${each_guitar.cost:10,.2f} {is_vintage}")
 
-input_guitar_info()
+
+main()
