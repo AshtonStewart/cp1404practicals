@@ -40,7 +40,6 @@ def main():
                     print("This is not a number. Please give a number")
             #adds the new guitar info to the nest
 
-
             all_guitars.append(Guitar(name, year, value))
         else:
             info_loop = False
