@@ -37,13 +37,13 @@ def main():
             # gets the cost as an integer and nothing else
             while int_guitar_cost_check is False:
                 try:
-                    value = float(input("What's the guitars value?: "))
+                    cost = float(input("What's the guitars value?: "))
                     int_guitar_cost_check = True
                 except ValueError:
                     print("This is not a number. Please give a number")
             # adds the new guitar info to the nest
 
-            all_guitar_info.append(Guitar(name, year, value))
+            all_guitar_info.append(Guitar(name, year, cost))
         else:
             info_loop = False
 
@@ -52,15 +52,15 @@ def main():
     all_guitar_info.sort()
 
     #prints all guitars in order of age
+    print("These are my guitars!: ")
     for i in range(len(all_guitar_info)):
         print(all_guitar_info[i])
 
-
-
-
     with open(file_name, "w", newline='') as out_file:
         writer = csv.writer(out_file)
+
+        #writes every guitar to the csv file
         for new_line in all_guitar_info:
-            writer.writerow([new_line.name, new_line.year, new_line.value])
+            writer.writerow([new_line.name, new_line.year, new_line.cost])
 
 main()
