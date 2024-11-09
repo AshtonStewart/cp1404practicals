@@ -28,6 +28,6 @@ class Guitar:
         vintage_age = 50
         return self.get_age() >= vintage_age
 
-    def __it__(self, others):
+    def __lt__(self, other):
         """returns the ages based on which are higher than others"""
-        return self.year < others.year
+        return self.year > other.year

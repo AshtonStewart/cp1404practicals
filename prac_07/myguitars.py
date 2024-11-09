@@ -18,7 +18,7 @@ def main():
             #print(f"bok {Guitar(line[0])}")
             all_guitar_info.append(Guitar(line[0], int(line[1]), float(line[2])))
     #print(all_guitar_info)
-    #all_guitar_info.sort()
+    all_guitar_info.sort()
 
     for i in range(len(all_guitar_info)):
         print(all_guitar_info[i])
