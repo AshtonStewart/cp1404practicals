@@ -30,4 +30,4 @@ class Guitar:
 
     def __lt__(self, other):
         """returns the ages based on which are higher than others"""
-        return self.year > other.year
+        return self.year < other.year
