@@ -19,20 +19,21 @@ menu = ("- (L)oad projects  \n"
 first_line_of_file = ["Name",	"Start Date	Priority",	"Cost Estimate",	"Completion Percentage"]
 def main():
 
-    all_projects = info_get()
+    all_projects = []
     chosen_action = "Not nothing"
     while chosen_action != "Q":
         print(menu)
         chosen_action = input(">> ").upper()
 
         if chosen_action == "L":
-            print("Load")
+            all_projects = info_get()
 
         elif chosen_action == "S":
             print("save")
 
         elif chosen_action == "D":
             print("Display")
+            display(all_projects)
 
         elif chosen_action == "F":
             print("Filter by date")
@@ -46,7 +47,6 @@ def main():
 
         elif chosen_action != "Q":
             print("Invalid menu choice")
-
 
 def info_get():
     all_contents = []
@@ -62,13 +62,20 @@ def info_get():
                 line = line.strip()
                 content = line.split("\t")
 
-
-                print(content)
+                #print(content)
                 all_contents.append(content)
             first_line += 1
 
+    return all_contents
 
-    print(all_contents)
+def save():
+    print("save")
+
+def display(info_to_display):
+    #print(info_to_display)
+
+    for line in info_to_display:
+        print(line)
 
 def add():
     date_string = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
