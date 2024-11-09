@@ -29,7 +29,7 @@ def main():
         reflection = parts[2] == "Yes"
         # Construct a ProgrammingLanguage object using the elements
         # year should be an int
-        if int(parts[4]) == 1:
+        if float(parts[4]) == 1:
             bool = True
         else:
             bool = False
