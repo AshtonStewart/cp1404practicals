@@ -14,7 +14,6 @@ class Guitar:
         self.cost = cost
 
     def __str__(self):
-
         """prints details of the guitar"""
         return f"{self.name} ({self.year}) : ${self.cost}"
 
@@ -28,3 +27,7 @@ class Guitar:
         """Returns True if the guitar is over 50 years old"""
         vintage_age = 50
         return self.get_age() >= vintage_age
+
+    def __it__(self, others):
+        """returns the ages based on which are higher than others"""
+        return self.year < others.year
