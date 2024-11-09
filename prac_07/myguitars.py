@@ -15,11 +15,43 @@ def main():
         reader = csv.reader(in_file)
         next(reader)
         for line in reader:
-            #print(f"bok {Guitar(line[0])}")
             all_guitar_info.append(Guitar(line[0], int(line[1]), float(line[2])))
-    #print(all_guitar_info)
+
+    info_loop = True
+    while info_loop == True:
+        int_guitar_year_check = False
+        int_guitar_cost_check = False
+        guitar_info = []
+
+        name = input("What's the guitars name? ")
+
+        if name != "":
+            # gets the age as an integer and nothing else
+            while int_guitar_year_check is False:
+                try:
+                    year = int(input("When was the guitar made?: "))
+                    int_guitar_year_check = True
+                except ValueError:
+                    print("This is not a number. Please give a number")
+
+            # gets the cost as an integer and nothing else
+            while int_guitar_cost_check is False:
+                try:
+                    value = float(input("What's the guitars value?: "))
+                    int_guitar_cost_check = True
+                except ValueError:
+                    print("This is not a number. Please give a number")
+            # adds the new guitar info to the nest
+
+            all_guitar_info.append(Guitar(name, year, value))
+        else:
+            info_loop = False
+
+
+    #sorts all guitars
     all_guitar_info.sort()
 
+    #prints all guitars in order of age
     for i in range(len(all_guitar_info)):
         print(all_guitar_info[i])
 
