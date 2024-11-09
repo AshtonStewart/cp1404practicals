@@ -55,4 +55,12 @@ def main():
     for i in range(len(all_guitar_info)):
         print(all_guitar_info[i])
 
+
+
+
+    with open(file_name, "w", newline='') as out_file:
+        writer = csv.writer(out_file)
+        for new_line in all_guitar_info:
+            writer.writerow([new_line.name, new_line.year, new_line.value])
+
 main()
