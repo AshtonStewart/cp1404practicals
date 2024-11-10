@@ -98,8 +98,13 @@ def display(info_to_display):
 
 def filter_display(all_contents):
 
+    print("\n\nFilter projects by date (before date not shown)")
     date_string = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
     date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    filtered_projects = [project for project in all_contents if datetime.datetime.strptime(project.S_D_P, "%d/%m/%Y").date() > date]
+    print(filtered_projects)
+    print("Projects after the given date are: ")
+    display(filtered_projects)
 
 def add(current_contents):
     new_project_info = []
@@ -138,10 +143,5 @@ def update(current_contents):
             project.C_P = new_C_P
 
     return current_contents
-
-
-
-
-
 
 main()
