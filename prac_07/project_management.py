@@ -37,7 +37,7 @@ def main():
             display(all_projects)
 
         elif chosen_action == "F":
-            print("Filter by date")
+            filter_display(all_projects)
 
         elif chosen_action == "A":
             all_projects = add(all_projects)
@@ -96,6 +96,10 @@ def display(info_to_display):
         print(each_project)
 
 
+def filter_display(all_contents):
+
+    date_string = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
+    date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
 
 def add(current_contents):
     new_project_info = []
@@ -132,7 +136,6 @@ def update(current_contents):
     for project in current_contents:
         if project.name == project_to_update:
             project.C_P = new_C_P
-
 
     return current_contents
 
