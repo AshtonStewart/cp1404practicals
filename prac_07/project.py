@@ -1,9 +1,20 @@
+"""
+Ashton Jack Stewart
+Practical 07 - project class
+"""
 
 
+class Project:
 
-class project:
-    def __init__(self, Name, Start_Date_Priority, Cost_Estimate, Completion_Percentage):
-        self.Name = Name
-        self.Start_Date_Priority = Start_Date_Priority
-        self.Cost_Estimate = Cost_Estimate
-        self.Completion_Percentage = int(Completion_Percentage)
+    #S_D_P = Start_Date_Priority
+    #C_E = Cost_Estimate
+    #C_P = Completion_Percentage
+    def __init__(self, name = "", S_D_P = "", C_E = float, priority = float, C_P = float):
+        self.name = name
+        self.S_D_P = S_D_P
+        self.priority = priority
+        self.C_E = C_E
+        self.C_P = C_P
+
+    def __str__(self):
+        return f'{self.name}, start: {self.S_D_P}, priority: {self.priority}, estimate: {self.C_E}, '

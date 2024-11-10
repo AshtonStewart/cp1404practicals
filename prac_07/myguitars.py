@@ -8,39 +8,43 @@ from guitar import Guitar
 import csv
 file_name = "guitars.csv"
 def main():
+    #Gets details of the file and puts them into a list which is added onto with user inputs then exported to excel
 
     all_guitar_info = []
 
+
+    #gets the guitars from the csv and stores them in a nest.
     with open(file_name, "r") as in_file:
         reader = csv.reader(in_file)
-        next(reader)
         for line in reader:
             all_guitar_info.append(Guitar(line[0], int(line[1]), float(line[2])))
 
+
+    #gets the users inputs then adds them to that nest
     info_loop = True
     while info_loop == True:
-        int_guitar_year_check = False
-        int_guitar_cost_check = False
+        year_is_int = False
+        cost_is_bool = False
         guitar_info = []
 
         name = input("What's the guitars name? ")
 
         if name != "":
             # gets the age as an integer and nothing else
-            while int_guitar_year_check is False:
+            while year_is_int is False:
                 try:
-                    year = int(input("When was the guitar made?: "))
-                    int_guitar_year_check = True
+                    year = int(input("What year was the guitar made?: "))
+                    year_is_int = True
                 except ValueError:
-                    print("This is not a number. Please give a number")
+                    print("This is not real year. Please give a valid year")
 
             # gets the cost as an integer and nothing else
-            while int_guitar_cost_check is False:
+            while cost_is_bool is False:
                 try:
                     cost = float(input("What's the guitars value?: "))
-                    int_guitar_cost_check = True
+                    cost_is_bool = True
                 except ValueError:
-                    print("This is not a number. Please give a number")
+                    print("This is not a valid cost. Please give a valid cost")
             # adds the new guitar info to the nest
 
             all_guitar_info.append(Guitar(name, year, cost))
@@ -51,15 +55,23 @@ def main():
     #sorts all guitars
     all_guitar_info.sort()
 
-    #prints all guitars in order of age
-    print("These are my guitars!: ")
-    for i in range(len(all_guitar_info)):
-        print(all_guitar_info[i])
+    #prints all guitars from the nest
+    print("These are my guitars;")
+    count = 0
+    for each_guitar in all_guitar_info:
+        count += 1
+        if each_guitar.is_vintage() == True:
+            is_vintage = "(Vintage)"
+        else:
+            is_vintage = ""
+        print(
+            f"Guitar {count}: {each_guitar.name:>20} ({each_guitar.year}), worth ${each_guitar.cost:10,.2f} {is_vintage}")
 
+
+    #exports the data to the csv file
     with open(file_name, "w", newline='') as out_file:
         writer = csv.writer(out_file)
 
-        #writes every guitar to the csv file
         for new_line in all_guitar_info:
             writer.writerow([new_line.name, new_line.year, new_line.cost])
 
