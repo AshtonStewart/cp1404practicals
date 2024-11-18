@@ -15,11 +15,13 @@ class DistanceConverterLayout(App):
         return self.root
 
     def convert_distance(self, value):
-        distance = float(value)
-        distance *= 1.6
-        #distance = self.root.ids.input_name.text
-        #result = float(value) ** 2
-        self.root.ids.output_distance.text = str(distance)
-        print(distance)
+
+        try:
+            distance = float(value)
+            distance *= 1.6
+            self.root.ids.output_distance.text = str(distance)
+
+        except ValueError:
+            self.root.ids.output_distance.text = "Invalid Distance"
 
 DistanceConverterLayout().run()
