@@ -36,4 +36,16 @@ class DistanceConverterLayout(App):
         except ValueError:
             self.root.ids.output_distance.text = "Invalid Distance"
 
+    def take_one_from_input(self, value):
+        """takes one to the input"""
+        print(value)
+
+        try:
+            distance = float(value)
+            distance -= 1
+            self.root.ids.input_number.text = str(distance)
+
+        except ValueError:
+            self.root.ids.output_distance.text = "Invalid Distance"
+
 DistanceConverterLayout().run()

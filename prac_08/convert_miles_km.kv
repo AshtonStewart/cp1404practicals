@@ -14,6 +14,8 @@ BoxLayout:
                     on_press: app.add_one_to_input(input_number.text)
                 Button:
                     text: 'down'
+                    on_press: app.take_one_from_input(input_number.text)
+
         Button:
             text: 'Convert Miles to KM'
             on_press: app.convert_distance(input_number.text)
