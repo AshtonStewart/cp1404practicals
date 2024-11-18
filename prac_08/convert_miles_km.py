@@ -11,7 +11,7 @@ multiplier = 1.60934
 
 class DistanceConverterLayout(App):
     def build(self):
-        self.title = "Box Layout Demo"
+        self.title = "Miles to KM converter"
         self.root = Builder.load_file('convert_miles_km.kv')
         #Window.size = (750, 500)
         return self.root
