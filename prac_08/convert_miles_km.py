@@ -24,25 +24,15 @@ class DistanceConverterLayout(App):
         except ValueError:
             self.root.ids.output_distance.text = "Invalid Distance"
 
-    def add_one_to_input(self, value):
-        """adds one to the input"""
-        print(value)
-
+    def input_change(self, value, action):
+        """Changes input value based on the pressed button"""
         try:
             distance = float(value)
-            distance += 1
-            self.root.ids.input_number.text = str(distance)
+            if action == "add":
+                distance += 1
+            else:
+                distance -= 1
 
-        except ValueError:
-            self.root.ids.output_distance.text = "Invalid Distance"
-
-    def take_one_from_input(self, value):
-        """takes one to the input"""
-        print(value)
-
-        try:
-            distance = float(value)
-            distance -= 1
             self.root.ids.input_number.text = str(distance)
 
         except ValueError:
