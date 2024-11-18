@@ -7,6 +7,7 @@ BoxLayout:
                 id: input_number
                 text: '10'
                 multiline: False
+                on_text: app.convert_distance(input_number.text)
             BoxLayout:
                 orientation: 'vertical'
                 Button:
