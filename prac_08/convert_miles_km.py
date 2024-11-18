@@ -7,7 +7,10 @@ Ashton Stewart
 from kivy.app import App
 from kivy.lang import Builder
 
+class DistanceConverterLayout(App):
+    def build(self):
+        self.title = "Box Layout Demo"
+        self.root = Builder.load_file('convert_miles_km.kv')
+        return self.root
 
-#class DistanceConverterLayout(App):
-
-#BoxLayoutDemo().run()
+DistanceConverterLayout().run()
