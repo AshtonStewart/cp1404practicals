@@ -6,10 +6,12 @@ Ashton Stewart
 
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.uix.button import Button
+from kivy.uix.button import Label
 from kivy.properties import StringProperty
 
 class DynamicLayoutApp(App):
+
+    status_text = StringProperty()
 
     def __init__(self, **kwargs):
         '''Defines a generic bunch of names'''
@@ -20,12 +22,11 @@ class DynamicLayoutApp(App):
         '''Builds the UI'''
         self.title = "Dynamic demo"
         self.root = Builder.load_file("dynamic_labels.kv")
-        self.new_widgets()
+        #self.new_widgets()
         return self.root
 
     def new_widgets(self):
-        print("Begone empty function warning")
         for name in self.names:
-            return self.root.add_widget(Button(text=name))
+            return self.root.add_widget(Label(text=name))
 
 DynamicLayoutApp().run()
