@@ -7,11 +7,8 @@ Ashton Stewart
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.button import Label
-from kivy.properties import StringProperty
 
 class DynamicLayoutApp(App):
-
-    status_text = StringProperty()
 
     def __init__(self, **kwargs):
         """Defines a generic bunch of names"""
