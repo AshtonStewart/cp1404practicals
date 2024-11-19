@@ -8,8 +8,8 @@ from kivy.lang import Builder
 
 
 class BoxLayoutDemo(App):
-    """Builds GUI"""
     def build(self):
+        """Builds GUI"""
         self.title = "Box Layout Demo"
         self.root = Builder.load_file('box_layout.kv')
         return self.root
