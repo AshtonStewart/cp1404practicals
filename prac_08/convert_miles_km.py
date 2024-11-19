@@ -28,13 +28,8 @@ class DistanceConverterLayout(App):
 
     def input_change(self, value, action):
         """Changes input value based on the pressed button."""
-        #Up button gives "add". Down button gives "subtract"
         try:
-            distance = float(value)
-            if action == "add":
-                distance += 1
-            else:
-                distance -= 1
+            distance = float(value) + action
             self.root.ids.input_number.text = str(distance)
         except ValueError:
             self.root.ids.output_distance.text = str(0)

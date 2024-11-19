@@ -13,10 +13,10 @@ BoxLayout:
                 orientation: 'vertical'
                 Button:
                     text: 'up'
-                    on_press: app.input_change(input_number.text, "add")
+                    on_press: app.input_change(input_number.text, (1))
                 Button:
                     text: 'down'
-                    on_press: app.input_change(input_number.text, "subtract")
+                    on_press: app.input_change(input_number.text, (-1))
 
         #Button:
         #    text: 'Convert Miles to KM'
