@@ -14,18 +14,19 @@ class DynamicLayoutApp(App):
     status_text = StringProperty()
 
     def __init__(self, **kwargs):
-        '''Defines a generic bunch of names'''
+        """Defines a generic bunch of names"""
         super().__init__(**kwargs)
         self.names = ["Ashton", "Bok", "Bringus", "Brongus", "Bingus", "Bongus", "Cam"]
 
     def build(self):
-        '''Builds the UI'''
+        """Builds the UI"""
         self.title = "Dynamic demo"
         self.root = Builder.load_file("dynamic_labels.kv")
         self.new_widgets()
         return self.root
 
     def new_widgets(self):
+        """Creates a new widget for all the given names"""
         for name in self.names:
             self.root.add_widget(Label(text=name))
 

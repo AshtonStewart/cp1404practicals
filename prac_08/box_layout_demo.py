@@ -15,7 +15,7 @@ class BoxLayoutDemo(App):
         return self.root
 
     def handle_greet(self):
-        '''Changes text in the Greeting box to the given name'''
+        """Changes text in the Greeting box to the given name"""
         self.root.ids.output_label.text = f"Hello {self.root.ids.input_name.text}"
 
     def handle_clear(self):
