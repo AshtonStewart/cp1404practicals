@@ -13,10 +13,12 @@ class UnreliableCar(Car):
         super().__init__(name, fuel)
         self.reliability = reliability
 
-    #def drive(self, reliability):
-        chance_to_drive = random.randint(1, 100)
-        # if chance_to_drive > self.reliability:
-        #     distance =
-        # else:
-        #     distance =
-        # return distance
+    def drive(self, distance):
+        """Randomly decides if the car drives the specified distance"""
+        Chance_to_stall = random.randint(1, 100)
+        #print(Chance_to_stall)
+        if Chance_to_stall < self.reliability:
+            distance = super().drive(distance)
+        else:
+             print("Car failed to start")
+        return distance
