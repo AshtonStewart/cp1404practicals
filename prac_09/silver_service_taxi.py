@@ -34,6 +34,7 @@ class SilverServiceTaxi(Taxi):
     def drive(self, distance):
         """Drive like parent Car but calculate fare distance as well."""
         distance_driven = distance
+        self.fuel -= distance_driven
         self.current_fare += distance_driven
         return distance_driven
 
