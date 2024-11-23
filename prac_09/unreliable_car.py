@@ -15,9 +15,9 @@ class UnreliableCar(Car):
 
     def drive(self, distance):
         """Randomly decides if the car drives the specified distance"""
-        Chance_to_stall = random.randint(1, 100)
+        chance_to_stall = random.randint(1, 100)
         #print(Chance_to_stall)
-        if Chance_to_stall < self.reliability:
+        if chance_to_stall < self.reliability:
             distance = super().drive(distance)
         else:
              print("Car failed to start")
