@@ -35,7 +35,7 @@ class SilverServiceTaxi(Taxi):
         """Drive like parent Car but calculate fare distance as well."""
         distance_driven = distance
         self.fuel -= distance_driven
-        self.current_fare += (distance_driven * self.price_per_km)
+        self.current_fare += distance_driven
         self.odometer += distance_driven
         return distance_driven
 
