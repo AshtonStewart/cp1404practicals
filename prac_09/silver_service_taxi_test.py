@@ -6,8 +6,9 @@ Silver_service_taxi test
 
 from silver_service_taxi import silverservicetaxi
 
-my_taxi = silverservicetaxi("Good taxi", 100)
+hummer = silverservicetaxi("Hummer", 200, 4)
 
-
-print(my_taxi)
-#my_taxi.drive(100)
+print(hummer)
+hummer.start_fare()
+hummer.drive(20)
+print(hummer.get_fare())

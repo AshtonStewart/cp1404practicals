@@ -11,16 +11,18 @@ class silverservicetaxi(Taxi):
     """Represents a fancy taxi object"""
 
     def __init__(self, name, fuel, fanciness):
+        """Constructs an object"""
         super().__init__(name, fuel)
         self.fancy_fare_multi = fanciness
         self.flagfall = 4.50
 
 
     def __str__(self):
+        """Returns a string representation of the taxi"""
         return f"{super().__str__()} Plus flagfall of ${self.flagfall}"
 
     def get_fare(self):
-        """Return the price for the taxi trip."""
+        """Return the price for the taxi trip (inclduing the additional costs for fanciness and flagfall)"""
         return (self.price_per_km * self.current_fare * self.fancy_fare_multi) + self.flagfall
 
     def start_fare(self):
