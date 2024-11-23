@@ -4,10 +4,10 @@ Ashton Jack Stewart
 Silver_service_taxi test
 """
 
-from silver_service_taxi import silverservicetaxi
+from silver_service_taxi import SilverServiceTaxi
 
-hummer = silverservicetaxi("Hummer", 200, 4)
-concept_car = silverservicetaxi("Overpriced car", 100, 2)
+hummer = SilverServiceTaxi("Hummer", 200, 4)
+concept_car = SilverServiceTaxi("Overpriced car", 100, 2)
 
 print(hummer)
 hummer.start_fare()

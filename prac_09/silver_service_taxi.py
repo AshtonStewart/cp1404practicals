@@ -7,14 +7,14 @@ Silver_service_taxi class
 
 from taxi import Taxi
 
-class silverservicetaxi(Taxi):
+class SilverServiceTaxi(Taxi):
     """Represents a fancy taxi object"""
 
     def __init__(self, name, fuel, fanciness):
         """Constructs an object"""
         super().__init__(name, fuel)
-        self.fancy_fare_multi = fanciness
         self.flagfall = 4.50
+        self.price_per_km *= fanciness
 
 
     def __str__(self):
@@ -23,7 +23,9 @@ class silverservicetaxi(Taxi):
 
     def get_fare(self):
         """Return the price for the taxi trip (inclduing the additional costs for fanciness and flagfall)"""
-        return (self.price_per_km * self.current_fare * self.fancy_fare_multi) + self.flagfall
+
+        return super().get_fare() + self.flagfall
+        #return (self.price_per_km * self.current_fare * self.fancy_fare_multi) + self.flagfall
 
     def start_fare(self):
         """Begin a new fare."""
