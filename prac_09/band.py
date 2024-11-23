@@ -7,22 +7,24 @@ Band class
 from musician import Musician
 
 class Band:
-    """CLass for band objects"""
+    """Class for band objects"""
 
-    def __init__(self, name = "", year = 0, cost = 0.0):
+    def __init__(self, name = ""):
         """Creates an object"""
         super().__init__()
         self.name = name
-        self.year = year
-        self.cost = cost
-        self.all_musicians = []
+        self.musicians = []
         self.instruments = []
 
-
     def __str__(self):
+        """Formats a string of musicians"""
+        all_musicians = ', '.join(str(musician) for musician in self.musicians)
+        return f"{self.name} ({all_musicians})"
 
-        return f"stuff"
+    def add(self, musician):
+        """Add a player to the band."""
+        self.musicians.append(musician)
 
-    def add(self, instrument):
-         """Add an instrument to musician's collection."""
-         self.instruments.append(instrument)
+    def play(self):
+        """Return a string showing the instrument playing their first (or no) instrument."""
+        all_musicians = ', '.join(str(musician) for musician in self.musicians)
