@@ -14,12 +14,11 @@ class Band:
         super().__init__()
         self.name = name
         self.musicians = []
-        self.instruments = []
 
     def __str__(self):
         """Formats a string of musicians"""
-        all_musicians = ', '.join(str(musician) for musician in self.musicians)
-        return f"{self.name} ({all_musicians})"
+        self.all_musicians = ', '.join(str(musician) for musician in self.musicians)
+        return f"{self.name} ({self.all_musicians})"
 
     def add(self, musician):
         """Add a player to the band."""
@@ -27,4 +26,4 @@ class Band:
 
     def play(self):
         """Return a string showing the instrument playing their first (or no) instrument."""
-        all_musicians = ', '.join(str(musician) for musician in self.musicians)
+        return '\n'.join([musician.play() for musician in self.musicians])
