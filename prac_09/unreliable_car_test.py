@@ -7,6 +7,7 @@ Unreliable Car test
 from unreliable_car import UnreliableCar
 
 def run_test():
+    """Runs tests"""
     my_car = UnreliableCar("Prius 1", 100, 42)
     print(my_car)
     my_car.drive(72)
