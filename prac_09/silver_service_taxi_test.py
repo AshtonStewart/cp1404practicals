@@ -6,11 +6,11 @@ Silver_service_taxi test
 
 from silver_service_taxi import SilverServiceTaxi
 
-HUMMER = SilverServiceTaxi("Hummer", 200, 4)
-CONCEPT_CAR = SilverServiceTaxi("Overpriced car", 100, 2)
 
-def main(hummer, concept_car):
+def main():
     """Shows a before and after of each car driving a distance and the fare for that drive."""
+    hummer = SilverServiceTaxi("Hummer", 200, 4)
+    concept_car = SilverServiceTaxi("Overpriced car", 100, 2)
     print(hummer)
     hummer.start_fare()
     hummer.drive(20)
@@ -23,4 +23,4 @@ def main(hummer, concept_car):
     print(concept_car)
     print(f"The fare is: ${concept_car.get_fare()}")
 
-main(HUMMER, CONCEPT_CAR)
+main()
