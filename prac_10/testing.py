@@ -22,36 +22,26 @@ def is_long_word(word, length=5):
     >>> is_long_word("Python", 6)
     True
     """
-    return len(word) > length
+    return len(word) >= length
 
 
 def run_tests():
     """Run the tests on the functions."""
     # assert test with no message - used to see if the function works properly
     assert repeat_string("Python", 1) == "Python"
-    # the test below should fail
-    print(repeat_string("hi", 2))
+    #print(repeat_string("hi", 2))
     assert repeat_string("hi", 2) == "hi hi"
 
-    # TODO: 1. fix the repeat_string function above so that it passes the failing test
-
-    # assert test with custom message,
-    # used to see if Car's init method sets the odometer correctly
-    # this should pass (no output)
-
+    # Test car fueling
     car = Car()
     assert car._odometer == 0, "Car does not set odometer correctly"
     assert car.fuel == 0
     car = Car(fuel=10)
-    #print(car)
     assert car.fuel == 10
 
 
 run_tests()
-
-# TODO: 3. Uncomment the following line and run the doctests
-# (PyCharm may see your >>> doctest comments and run doctests anyway.)
-# doctest.testmod()
+doctest.testmod()
 
 # TODO: 4. Fix the failing is_long_word function
 # (Don't change the tests, change the function!)
