@@ -43,6 +43,15 @@ def run_tests():
 run_tests()
 doctest.testmod()
 
+def correct_sentence(input):
+    if input[-1] != ".":
+        input +="."
+        input = input.capitalize()
+    return input
+
+print(correct_sentence("hello"))
+print(correct_sentence("test sentence"))
+
 # TODO: 5. Write and test a function to format a phrase as a sentence,
 # starting with a capital and ending with a single full stop.
 # Important: start with a function header and just use pass as the body
