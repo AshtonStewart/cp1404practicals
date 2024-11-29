@@ -44,20 +44,17 @@ run_tests()
 doctest.testmod()
 
 def correct_sentence(input):
+    """Adds full stop to end of sentence if missing and capitalizes first character"""
+    """
+    >>> correct_sentence("hello")
+    'Hello.'
+    >>> correct_sentence("hello world")
+    'Hello world.'
+    >>> correct_sentence("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> correct_sentence(
+    """
     if input[-1] != ".":
         input +="."
         input = input.capitalize()
     return input
-
-print(correct_sentence("hello"))
-print(correct_sentence("test sentence"))
-
-# TODO: 5. Write and test a function to format a phrase as a sentence,
-# starting with a capital and ending with a single full stop.
-# Important: start with a function header and just use pass as the body
-# then add doctests for 3 tests:
-#   'hello' -> 'Hello.'
-#   'It is an ex parrot.' -> 'It is an ex parrot.'
-# and one more that you decide is a useful test.
-# Run your doctests and watch the tests fail.
-# Then write the body of the function so that the tests pass.
