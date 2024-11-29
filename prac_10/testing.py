@@ -29,7 +29,7 @@ def run_tests():
     """Run the tests on the functions."""
     # assert test with no message - used to see if the function works properly
     assert repeat_string("Python", 1) == "Python"
-    #print(repeat_string("hi", 2))
+    # print(repeat_string("hi", 2))
     assert repeat_string("hi", 2) == "hi hi"
 
     # Test car fueling
@@ -43,6 +43,7 @@ def run_tests():
 run_tests()
 doctest.testmod()
 
+
 def correct_sentence(input):
     """Adds full stop to end of sentence if missing and capitalizes first character"""
     """
@@ -55,6 +56,6 @@ def correct_sentence(input):
     >>> correct_sentence(
     """
     if input[-1] != ".":
-        input +="."
+        input += "."
         input = input.capitalize()
     return input
