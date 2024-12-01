@@ -74,7 +74,8 @@ approach.
 
 Additionally, the marking seems a bit disproportionate in regards to a single error being worth 25%, just the same as 
 core functionality of components missing. There have also been times where a mistake in one file has resulted in an 
-extremely low mark across the entire practical which seems excessively harsh. 
+extremely low mark across the entire practical which seems excessively harsh. I believe redesigning how marks are
+distributed would significantly improve the practicals, especially given how they're worth so much of the final grade.
 
 ### What did you do really well for practicals in this subject?
 
